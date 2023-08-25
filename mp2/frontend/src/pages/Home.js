@@ -8,6 +8,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import cebu from '../img/cebu.png';
+import bohol from '../img/bohol.png';
+import coron from '../img/coron.png';
+import tagaytay from '../img/tagaytay.png';
 
 const Home = () => {
 
@@ -25,20 +29,16 @@ const Home = () => {
         <Container className="carousel-container">
             <Slider {...settings}>
             <Container>
-                <img src={hammock} alt="hammock" />
+                <img src={cebu} alt="cebu" />
             </Container>
             <Container>
-                <img src={relax} alt="girl" />
+                <img src={bohol} alt="bohol" />
             </Container>
             <Container>
-                <img src={elNidoHead} alt="sample3" />
+                <img src={coron} alt="coron" />
             </Container>
             </Slider>
         </Container>
-
-
-
-
 
         <Container className="text-center headtext mtop">
             <h2 className='h1' >Welcome to Vacation Island</h2>
@@ -58,7 +58,7 @@ const Home = () => {
                 <Card.Body>
                     <Card.Title>Tour A</Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-into additional content. This content is a little bit longer.
+                   <b> Tropical Getaway Package:</b> Dive into paradise with our Tropical Getaway Package, offering a week-long escape to the pristine beaches of Bali. Enjoy luxurious accommodations, thrilling water sports, and guided tours to ancient temples. It's the perfect opportunity to relax, unwind, and explore the beauty of Indonesia's most enchanting island.
                     </Card.Text>
                     <Button variant="info">Get Qoute</Button>
                 </Card.Body>
@@ -69,7 +69,7 @@ const Home = () => {
                 <Card.Body>
                     <Card.Title>Tour B</Card.Title>
                     <Card.Text>
-                        This card has supporting text below as a natural lead-in to additional content.{' '}
+                   <b> Wildlife Safari Expedition:</b> For the nature enthusiasts, our Wildlife Safari Expedition offers an up-close encounter with the wild. Journey deep into the heart of Africa, where you'll witness the Big Five in their natural habitat. From thrilling game drives to cozy bush lodges, this package promises an awe-inspiring safari adventure you'll cherish forever.
                     </Card.Text>
                     <Button variant="info">Get Qoute</Button>
                 </Card.Body>  
@@ -80,11 +80,23 @@ const Home = () => {
                 <Card.Body>
                     <Card.Title>Tour C</Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+                    <b>Adventure Expedition Package: </b> Seek thrills and adrenaline? Our Adventure Expedition Package takes you on an unforgettable journey, including white-water rafting, zip-lining through lush rainforests, and trekking in the Himalayas.
                     </Card.Text>
                     <Button variant="info">Get Qoute</Button>
                 </Card.Body>       
             </Card>
+
+            <Card className='m-3'>
+                <Card.Img variant="top" src={tagaytay} />
+                <Card.Body>
+                    <Card.Title>Tour D</Card.Title>
+                    <Card.Text>
+                   <b> Adventure Expedition Package: </b> Seek thrills and adrenaline? Our Adventure Expedition Package takes you on an unforgettable journey, including white-water rafting, zip-lining through lush rainforests, and trekking in the Himalayas.
+                    </Card.Text>
+                    <Button variant="info">Get Qoute</Button>
+                </Card.Body>       
+            </Card>
+
         </CardGroup>
     </Container>
 
