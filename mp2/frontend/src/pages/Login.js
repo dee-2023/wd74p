@@ -26,8 +26,11 @@ const LoginForm = () => {
             }
         } catch (error) {
             console.error('Error:', error);
-        }
+        }    
     };
+    const handleRegisterClick = () => {
+        navigate('/register');
+    }
 
     return (
         <Container className='App-login'>
@@ -46,16 +49,14 @@ const LoginForm = () => {
                     <Form.Label>Password:</Form.Label>
                     <Form.Control 
                         type="password" 
-                        value={password} onChange={(e) => setPassword(e.target.value)} />
+                        value={password} onChange={(e) => setPassword(e.target.value)} /><br />
                 </Form.Group>
-                <Button type="submit">Login</Button>
+                <Button type="submit">Login</Button> 
             </Form>
+            <p> Don't have an account yet?</p><Button onClick={handleRegisterClick}>Register</Button>
             </Card>
         </Container>
     );
 };
 
 export default LoginForm;
-
-
-
