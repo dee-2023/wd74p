@@ -30,6 +30,7 @@ const LoginForm = () => {
                 navigate('/dashboard');
             } else {
                 setMessage(data.message);
+                localStorage.setItem('isLog' , 'false');
             }
         } catch (error) {
             console.error('Error:', error);

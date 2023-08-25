@@ -1,8 +1,10 @@
 import { Container } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
 
 
 const Dashboard = () => {
+  const navigate= useNavigate();
   const [email, setEmail] = useState('user@example.com');
   const [password, setPassword] = useState('********');
   const [savedItems, setSavedItems] = useState([
@@ -23,6 +25,12 @@ const Dashboard = () => {
     setSavedItems([...savedItems, item]);
   };
 
+  useEffect( ()=> {
+    let checkLog = localStorage.getItem('isLog');
+    if (checkLog =='false'){
+      navigate('/login')
+    }
+}, []);
   
   return(
 <Container>
