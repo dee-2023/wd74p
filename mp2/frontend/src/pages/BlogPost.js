@@ -7,7 +7,7 @@ const BlogPost = ({ title, author, date, imageUrl, content }) => {
       <h2>{title}</h2>
       <p>By {author}</p>
       <p>{date}</p>
-      <img alt={'Image for ${title}'} src={imageUrl} />
+      <img src={imageUrl} alt={title}  />
       <div>{content}<hr /></div>
     </Container>
   );
