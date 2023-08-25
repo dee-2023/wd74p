@@ -1,6 +1,6 @@
 import './App.css';
 import './pages/login.css';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home';
 import AboutPage from './pages/About';
 import Contact from './pages/Contact';
@@ -12,6 +12,8 @@ import React from 'react';
 import MemberLayout from './layouts/memberlayout/MemberLayout';
 import Dashboard from './layouts/memberlayout/memberpages/Dashboard';
 import Shop from './layouts/memberlayout/memberpages/OnlineShop';
+import Plan from './pages/Plan';
+import Home from './pages/Home'; 
 //import ProtectedRoute from './layouts/memberlayout/ProtectedRoute';
 
 
@@ -22,6 +24,7 @@ const App = () => {
 
   
   return (
+    <router> 
 <Routes>
       <Route element={ <RootLayout /> } >
         <Route path="/" element={<HomePage />}> </Route>
@@ -37,8 +40,12 @@ const App = () => {
         <Route path="/" element={<HomePage />}> </Route>
        <Route path="/dashboard" element={<Dashboard />}> </Route>
         <Route path="/online-shop" element={<Shop />}> </Route>
-     </Route>   
-    </Routes>
+     </Route> 
+
+     <Route path="/Home" element={<Home />} /> {/* Corrected path */}
+     <Route path="/Plan" element={<Plan />} /> {/* Corrected path */}
+      </Routes>  
+    </router>
 
 
 

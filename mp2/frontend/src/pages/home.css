@@ -4,9 +4,8 @@
     padding: 25px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     
-
 }
 .headtext {
     color:#268f8e;
