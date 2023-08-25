@@ -7,7 +7,7 @@ const About = () => {
 
     return(
 
-<Container className="Col mtop text-center" >
+<Container className="Col text-center" >
     <h2 className="text-center"> About Us </h2><hr /><hr />
     <Row>
         <Col xs={6} md={6}>
@@ -19,7 +19,7 @@ const About = () => {
     
         </Col>
         
-    </Row>
+    </Row><hr /><hr />
 </Container>
 
     );

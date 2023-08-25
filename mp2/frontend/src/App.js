@@ -7,7 +7,6 @@ import Contact from './pages/Contact';
 import RootLayout from './layouts/mainlayout/RootLayout';
 import BlogPage from './pages/BlogPage';
 import Login from './pages/Login';
-import Register from './pages/Register';
 import React from 'react';
 import MemberLayout from './layouts/memberlayout/MemberLayout';
 import Dashboard from './layouts/memberlayout/memberpages/Dashboard';
@@ -30,7 +29,6 @@ const App = () => {
         <Route path="/contact" element={<Contact /> }> </Route>
         <Route path="/blog-page" element={<BlogPage />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/register' element={<Register />}></Route>
       </Route>
 
       <Route element={<MemberLayout />}>  
