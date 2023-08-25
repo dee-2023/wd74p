@@ -1,49 +1,57 @@
-import React, { useState } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import React , {useState} from 'react';
+import Amazon from './Amazon';
+import ShopNav from './ShopNav'
+import Cart from './Cart';
+import './amazon.css';
 
-const ProductPage = () => {
-    const products = [
-        { id: 1, name: 'Product 1', price: 10 },
-        { id: 2, name: 'Product 2', price: 20 },
-        { id: 3, name: 'Product 3', price: 15 },
-    ];
+const OnlineShop = () => {
+	const [show, setShow] = useState(true);
+	const [cart , setCart] = useState([]);
+	const [warning, setWarning] = useState(false);
 
-    const [cart, setCart] = useState([]);
+	const handleClick = (item)=>{
+		let isPresent = false;
+		cart.forEach((product)=>{
+			if (item.id === product.id)
+			isPresent = true;
+		})
+		if (isPresent){
+			setWarning(true);
+			setTimeout(()=>{
+				setWarning(false);
+			}, 2000);
+			return ;
+		}
+		setCart([...cart, item]);
+	}
 
-    const addToCart = (product) => {
-        setCart([...cart, product]);
-    };
+	const handleChange = (item, d) =>{
+		let ind = -1;
+		cart.forEach((data, index)=>{
+			if (data.id === item.id)
+				ind = index;
+		});
+		const tempArr = cart;
+		tempArr[ind].amount += d;
+		
+		if (tempArr[ind].amount === 0)
+			tempArr[ind].amount = 1;
+		setCart([...tempArr])
+	}
 
-    const removeFromCart = (productId) => {
-        const updatedCart = cart.filter(item => item.id !== productId);
-        setCart(updatedCart);
-    };
+  return (
+	<React.Fragment>
+		<ShopNav size={cart.length} setShow={setShow} />
+		{
+			show ? <Amazon handleClick={handleClick} /> : <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
+		}
+		{
+			warning && <div className='warning'>Item is already added to your cart</div>
+		}
+	</React.Fragment>
+  )
+}
 
-    return (
-        <Container>
-            <h1>Product Page</h1>
-            <div className="products">
-                {products.map(product => (
-                <div key={product.id} className="product">
-                    <h2>{product.name}</h2>
-                    <p>Price: ${product.price}</p>
-                    <Button variant='warning' onClick={() => addToCart(product)}>Add to Cart</Button>
-                </div>
-                ))}
-            </div>
-            <div className="cart">
-                <h2>Cart</h2>
-                <ul>
-                    {cart.map(item => (
-                    <li key={item.id}>
-                        {item.name} - ${item.price}
-                    <Button variant='danger' onClick={() => removeFromCart(item.id)}>Remove</Button>
-                    </li>
-                ))}
-                </ul>
-            </div>
-        </Container>
-  );
-};
 
-export default ProductPage;
+
+export default OnlineShop;
