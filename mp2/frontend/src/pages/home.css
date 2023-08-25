@@ -29,6 +29,7 @@
   .carousel-container {
     max-width: 800px;
     margin: 0 auto;
+    
   }
   
   .slick-slide {
@@ -41,4 +42,6 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    display: flex;
+    margin: auto;
   }

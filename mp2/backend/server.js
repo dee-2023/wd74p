@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
     } else {
         res.json({ success: false, message: 'Invalid credentials' });
     }
-});
+}); [];
 
 app.get('/api/firstname', (req, res) => {
     res.json(LoginProfiles);

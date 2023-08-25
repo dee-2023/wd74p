@@ -11,16 +11,11 @@ import React from 'react';
 import MemberLayout from './layouts/memberlayout/MemberLayout';
 import Dashboard from './layouts/memberlayout/memberpages/Dashboard';
 import Shop from './layouts/memberlayout/memberpages/OnlineShop';
-//import ProtectedRoute from './layouts/memberlayout/ProtectedRoute';
-
-
-
-
 
 const App = () => {
 
-  
-  return (
+return (
+
 <Routes>
       <Route element={ <RootLayout /> } >
         <Route path="/" element={<HomePage />}> </Route>
@@ -36,7 +31,7 @@ const App = () => {
        <Route path="/dashboard" element={<Dashboard />}> </Route>
         <Route path="/online-shop" element={<Shop />}> </Route>
      </Route>   
-    </Routes>
+</Routes>
 
 
 

@@ -1,5 +1,5 @@
 import './login.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 //import { Container, Card, Form, Button } from 'react-bootstrap';
@@ -35,11 +35,16 @@ const LoginForm = () => {
             console.error('Error:', error);
         }    
     };
+
+    useEffect( ()=> {
+        let errLogin = localStorage.getItem('errorInLogin');
+        setMessage(errLogin);
+    }, []);
     
 
     return (
-        <main>
-            <Card>
+    <main className='App-login'>
+        <Card>
        
         <div className='form-container'>
         <Form onSubmit={handleSubmit}>
@@ -53,16 +58,16 @@ const LoginForm = () => {
             <div className='inputs' >
                 {action==="Sign In"? <div></div> 
                     :
-                    <div className='inputs'>
-                        <div className='input'>
+                    <Form.Group>
+                        <Form.Label className='input'>
                             <img src={email_icon} alt=''  />
                             <input type='email' placeholder='Email Address'/>
-                        </div>
+                        </Form.Label>
                         <div className='input'>
-                            <img src={email_icon} alt=''  />
+                            <img src={user_icon} alt=''  />
                             <input type='text' placeholder='Full Name'/>
                         </div>
-                    </div>
+                    </Form.Group>
                 }
             
                 <div className='input'>
@@ -85,10 +90,10 @@ const LoginForm = () => {
                 <div className={action==="Sign In" ? "submit gray":"submit"} onClick={() =>{setAction("Sign Up")}}> Sign Up</div>
                 <button className={action==="Sign Up" ? "submit gray":"submit"} onClick={() =>{setAction("Sign In")}}>Sign In</button>
             </div>
-            </Form>   
+        </Form>   
         </div>
         </Card>
-        </main>
+    </main>
     );
 };
 
