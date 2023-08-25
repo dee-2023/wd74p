@@ -12,8 +12,6 @@ import React from 'react';
 import MemberLayout from './layouts/memberlayout/MemberLayout';
 import Dashboard from './layouts/memberlayout/memberpages/Dashboard';
 import Shop from './layouts/memberlayout/memberpages/OnlineShop';
-import Plan from './pages/Plan';
-import Home from './pages/Home'; 
 //import ProtectedRoute from './layouts/memberlayout/ProtectedRoute';
 
 
@@ -42,8 +40,7 @@ const App = () => {
         <Route path="/online-shop" element={<Shop />}> </Route>
      </Route> 
 
-     <Route path="/Home" element={<Home />} /> {/* Corrected path */}
-     <Route path="/Plan" element={<Plan />} /> {/* Corrected path */}
+    
       </Routes>  
     </router>
 
