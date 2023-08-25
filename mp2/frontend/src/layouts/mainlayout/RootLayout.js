@@ -8,7 +8,9 @@ const RootLayout = () =>{
     return(
         <div className="root-main">
           
-          <Header></Header>  
+          <Header>
+           
+          </Header>  
            
 
           <Main />
