@@ -70,9 +70,11 @@ const Home = () => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 100,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
       };
  
     
@@ -129,9 +131,9 @@ const Home = () => {
                   >
                     <option value=""><strong>Select a Plan</strong></option>
                     <option value="Plan A">Tour A</option>
-                    <option value="Plan A">Tour B</option>
-                    <option value="Plan A">Tour C</option>
-                    <option value="Plan A">Tour D</option>
+                    <option value="Plan B">Tour B</option>
+                    <option value="Plan C">Tour C</option>
+                    <option value="Plan D">Tour D</option>
                   
                   </select>
                 </td>
