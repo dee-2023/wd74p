@@ -3,20 +3,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import '../mainlayout/layout.css';
 import { useState } from "react";
-import { Button } from "react-bootstrap";
-const AdminHeader = () => {
+import {useNavigate} from 'react-router-dom';
+
+const MemberHeader = () => {
+   const navigate = useNavigate();
+   
 
    const setisLoggedIn = useState(null);
+   const logOut = () => {
+     setisLoggedIn(false);
+     navigate('/home');
+   };
 
-  const logOut = () => {
-    setisLoggedIn(false);
-  };
 
- return(
-
-   <header> 
+   return (
+  
+     
    <Navbar bg="dark" data-bs-theme="dark">
       <Container>
          <Nav>
@@ -25,18 +28,15 @@ const AdminHeader = () => {
             <Nav.Link href="/online-shop">Shop</Nav.Link>
          </Nav>
 
-         <Container>
-            <Button href="/home" className="justify-content-end" onClick={logOut}>Logout</Button>
-            </Container>
+         <Nav className="justify-content-end">
+         <Nav.Link href="/home" className="justify-content-end" onClick={logOut}>Logout</Nav.Link>
          
+      </Nav>   
       </Container>
    </Navbar>
-
- </header>
-
    )
-  
+};
+ 
 
-}
 
-export default AdminHeader;
+export default MemberHeader;

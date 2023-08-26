@@ -1,6 +1,6 @@
 import './App.css';
 import './pages/login.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home';
 import AboutPage from './pages/About';
 import Contact from './pages/Contact';
@@ -34,7 +34,7 @@ const App = () => {
 
       <Route element={<MemberLayout />}>  
         <Route path="/" element={<HomePage />}> </Route>
-       <Route path="/dashboard" element={<Dashboard />}> </Route>
+        <Route path="/dashboard" element={<Dashboard />}> </Route>
         <Route path="/online-shop" element={<Shop />}> </Route>
      </Route> 
 

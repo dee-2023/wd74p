@@ -52,7 +52,7 @@ const LoginForm = () => {
             
             <div className='header'>
                 <div className='text'>{action}</div>
-                {action==="Sign Up" ? <p></p> : <p className='red'>{message}</p>}
+                {action==="Sign Up" ? <p></p> : <p className='red'><b>{message}</b></p>}
                 
                 <div className='underline'></div>
             </div>
@@ -62,23 +62,23 @@ const LoginForm = () => {
                     <Form.Group>
                         <Form.Label className='input'>
                             <img src={email_icon} alt=''  />
-                            <input type='email' placeholder='Email Address'/>
+                            <input type='email' placeholder='Email Address' required/>
                         </Form.Label>
                         <div className='input'>
                             <img src={user_icon} alt=''  />
-                            <input type='text' placeholder='Full Name'/>
+                            <input type='text' placeholder='Full Name' required/>
                         </div>
                     </Form.Group>
                 }
             
                 <div className='input'>
                     <img src={user_icon} alt=''  />
-                    <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} required/>
                 </div>
             
                 <div className='input'>
                     <img src={password_icon} alt=''  />
-                    <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
             </div>
             
